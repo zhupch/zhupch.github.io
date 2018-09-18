@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>驱魔鮔</title>
+  
+  <subtitle>hello world</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-07-23T02:55:48.172Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>喝敌敌畏的猪</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于java 控制台输入问题</title>
+    <link href="http://yoursite.com/2018/07/23/%E5%85%B3%E4%BA%8Ejava-%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/07/23/关于java-控制台输入问题/</id>
+    <published>2018-07-23T02:45:41.000Z</published>
+    <updated>2018-07-23T02:55:48.172Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="java输入问题"><a href="#java输入问题" class="headerlink" title="java输入问题"></a>java输入问题</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">Scanner sc = new Scanner(System.in);</span><br><span class="line">String str=sc.next();</span><br><span class="line">System.out.println(str);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在java中需要在控制台输入一个字符串时，大家肯定会用上面的一段代码，一般来说是没有问题的，但是当你输入的字符串中有空的话，就会有问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当你输入“hello world”时，输出的结果就hello</span><br></pre></td></tr></table></figure></p><p>所以在有空格的情况下不能直接用sc.next。。。。<br>输入中有空格的话，只需要稍稍改一下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">Scanner sc = new Scanner(System.in);</span><br><span class="line">String str=sc.nextLine();</span><br><span class="line">System.out.println(str);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;java输入问题&quot;&gt;&lt;a href=&quot;#java输入问题&quot; class=&quot;headerlink&quot; title=&quot;java输入问题&quot;&gt;&lt;/a&gt;java输入问题&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MyEclipse重新部署</title>
+    <link href="http://yoursite.com/2018/06/23/MyEclipse%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2/"/>
+    <id>http://yoursite.com/2018/06/23/MyEclipse重新部署/</id>
+    <published>2018-06-23T07:35:14.000Z</published>
+    <updated>2018-06-23T07:48:04.812Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="jee重新部署问题"><a href="#jee重新部署问题" class="headerlink" title="jee重新部署问题"></a>jee重新部署问题</h1><p>在学习jee时，会遇上一个问题，就是在你修改了一些java代码时，你需要重新发布一下才行，比如你添加了一条语句<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"hello world"</span>);</span><br></pre></td></tr></table></figure></p><p>这个时候如果你不重新发布，浏览器是显示不出这条语句的，如果你是在改错的时候，需要频繁的使用这条语句，每次重新发布又要一段时间，怎么办？？</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在Tomcat安装目录conf文件夹下找到context.xml打开把<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;context&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/context&gt;</span><br></pre></td></tr></table></figure></p><p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;context reloadable=&quot;true&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/context&gt;</span><br></pre></td></tr></table></figure></p><p>就OK了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;jee重新部署问题&quot;&gt;&lt;a href=&quot;#jee重新部署问题&quot; class=&quot;headerlink&quot; title=&quot;jee重新部署问题&quot;&gt;&lt;/a&gt;jee重新部署问题&lt;/h1&gt;&lt;p&gt;在学习jee时，会遇上一个问题，就是在你修改了一些java代码时，你需要重新发布一下
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java导入包访问限制</title>
+    <link href="http://yoursite.com/2018/06/04/java%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/06/04/java中的问题/</id>
+    <published>2018-06-04T06:01:50.000Z</published>
+    <updated>2018-06-05T02:20:52.132Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="访问限制：由于对必需的库-D-program-JAVA-lib-rt-jar-具有一定限制，因此无法访问类型-WindowsLookAndFeel"><a href="#访问限制：由于对必需的库-D-program-JAVA-lib-rt-jar-具有一定限制，因此无法访问类型-WindowsLookAndFeel" class="headerlink" title="访问限制：由于对必需的库 D:\program\JAVA\lib\rt.jar 具有一定限制，因此无法访问类型 WindowsLookAndFeel"></a>访问限制：由于对必需的库 D:\program\JAVA\lib\rt.jar 具有一定限制，因此无法访问类型 WindowsLookAndFeel</h1><hr><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目  -&gt; 属性 -&gt; Java构建路径-&gt;库  先将【JRE系统库】移除，然后【添加库】再将【JRE系统库】重新添加进去就好了</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;访问限制：由于对必需的库-D-program-JAVA-lib-rt-jar-具有一定限制，因此无法访问类型-WindowsLookAndFeel&quot;&gt;&lt;a href=&quot;#访问限制：由于对必需的库-D-program-JAVA-lib-rt-jar-具有一定限制，因
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>写一篇博客</title>
+    <link href="http://yoursite.com/2018/05/20/%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2018/05/20/写一篇博客/</id>
+    <published>2018-05-20T08:01:40.000Z</published>
+    <updated>2018-06-05T02:10:36.794Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hexo搭建博客的第一篇博文"><a href="#hexo搭建博客的第一篇博文" class="headerlink" title="hexo搭建博客的第一篇博文"></a>hexo搭建博客的第一篇博文</h1><p><strong>hexo</strong>是一个快速，简单而强大的博客框架。您可以使用Markdown（或其他语言）编写文章，Hexo可以在几秒钟内生成具有美丽主题的静态文件。</p><hr><a id="more"></a><p>那么该怎么真正的写一篇博客呢？</p><p>1、写一篇文章先要用到一个命令来创建一个.md的文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"我的第一篇博客"</span></span><br></pre></td></tr></table></figure></p><p>这样就在相应的路径中建立了一个叫做”我的第一篇博客”的文档，当然你也可以不用命令 ，你可以直接新建一个文本文档，然后重命名，把后缀名改为.md 就行了。</p><p>2、写博客你还要熟悉Markdown的使用 ,也可以直接用网页版  <a href="https://maxiang.io/" target="_blank" rel="noopener">马克飞象</a>写好以后复制到文档中，或者使用其他编辑器（vs code、notepad++，个人推荐vs code）</p><p>3、博客中默认是全文显示的，那样就需要将博客折叠一下，这样让博客的界面更简洁更有层次感,将下面这段代码放入文档中，在合适的位置放入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure></p><p>4、最后就是生成静态文件并发布到GitHub中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> g  //生成静态文件</span><br><span class="line"><span class="variable">$hexo</span> s  //本地预览</span><br><span class="line"><span class="variable">$hexo</span> d  //部署</span><br></pre></td></tr></table></figure></p><p>到这里就完成了一篇博客</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;hexo搭建博客的第一篇博文&quot;&gt;&lt;a href=&quot;#hexo搭建博客的第一篇博文&quot; class=&quot;headerlink&quot; title=&quot;hexo搭建博客的第一篇博文&quot;&gt;&lt;/a&gt;hexo搭建博客的第一篇博文&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;hexo&lt;/strong&gt;是一个快速，简单而强大的博客框架。您可以使用Markdown（或其他语言）编写文章，Hexo可以在几秒钟内生成具有美丽主题的静态文件。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
