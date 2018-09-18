@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-23T02:55:48.172Z</updated>
+  <updated>2018-09-18T14:37:42.097Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>换系统后怎么继续使用hexo</title>
+    <link href="http://yoursite.com/2018/09/18/%E6%8D%A2%E7%B3%BB%E7%BB%9F%E5%90%8E%E6%80%8E%E4%B9%88%E7%BB%A7%E7%BB%AD%E4%BD%BF%E7%94%A8hexo/"/>
+    <id>http://yoursite.com/2018/09/18/换系统后怎么继续使用hexo/</id>
+    <published>2018-09-18T13:06:59.000Z</published>
+    <updated>2018-09-18T14:37:42.097Z</updated>
+    
+    <content type="html"><![CDATA[<hr><pre><code>暑假回来以后重新装了一个系统，装完系统以后的一天发现我博客不能用了，然后各种去网上找各位道友  的渡劫的经验，显然是找了好多，也进了很多的坑，下面分享一下我的一些坑吧！！</code></pre><hr><a id="more"></a><h3 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h3><ul><li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></li><li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a> 我是以前就有没有删除的，所以没有去下</li></ul><hr><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ul><li>你的hexo的文件夹没有删除（如果没有的话，只用重新去搭建一个了）<br><img src="http://ww1.sinaimg.cn/large/006TQP4ygy1fve0jmg6phj30lr0bf3z7.jpg" alt=""></li></ul><hr><p>按照网上别人的教程,直接输入下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure></p><p>但是我不行，当然主要是我已经以前安装了node.js了，你可以检查一下，在控制台上输入node -v,如果显示的是版本号，说明就对了，没有的话就要去配置环境变量了,具体的怎么去配置我就不多啰嗦了。<br>我是没有配置环境变量，所以会报错，所以如果你安装了node.js的话，就要去配置环境变量了，把你们以前安装的node.js的路径放在Path后面（不是覆盖，直接追加，记得带前面要有分号）<br>然后我接着去试着用了上面的代码，可以了，接着按照他的教程走下去<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入 hexo g</span><br></pre></td></tr></table></figure></p><p>结果又一次报错了 hexo :command not found,我的天，内心是有点奔溃的哈<br>然后我又去找了问题，结果得知又是环境变量没有配置（眼冒金星）。好吧，接着咯，我又把hexo（就是我上面提到的那个文件夹）里的bin目录的路径放在Path后面，再一次执行，hexo可以了，然后因为重新来过了，会提示你 :不知道你是谁,你需要执行一下下面的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的GitHub用户名"</span></span><br><span class="line">git config --global user.email <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure></p><p>最后就是.ssh的配置了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “你的GitHub注册邮箱”</span><br></pre></td></tr></table></figure></p><p>连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。打开id_rsa.pub文件，将里面的一串字符复制到github中的setting，如下图<br><img src="http://ww1.sinaimg.cn/large/006TQP4ygy1fve1ji6scuj311i0kjgo1.jpg" alt=""><br>大功告成了，又可以愉快的玩耍</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;暑假回来以后重新装了一个系统，装完系统以后的一天发现我博客不能用了，然后各种去网上找各位道友  
+的渡劫的经验，显然是找了好多，也进了很多的坑，下面分享一下我的一些坑吧！！
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>关于java 控制台输入问题</title>
@@ -81,37 +102,19 @@
   
   <entry>
     <title>写一篇博客</title>
-    <link href="http://yoursite.com/2018/05/20/%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2018/05/20/写一篇博客/</id>
-    <published>2018-05-20T08:01:40.000Z</published>
-    <updated>2018-06-05T02:10:36.794Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="hexo搭建博客的第一篇博文"><a href="#hexo搭建博客的第一篇博文" class="headerlink" title="hexo搭建博客的第一篇博文"></a>hexo搭建博客的第一篇博文</h1><p><strong>hexo</strong>是一个快速，简单而强大的博客框架。您可以使用Markdown（或其他语言）编写文章，Hexo可以在几秒钟内生成具有美丽主题的静态文件。</p><hr><a id="more"></a><p>那么该怎么真正的写一篇博客呢？</p><p>1、写一篇文章先要用到一个命令来创建一个.md的文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"我的第一篇博客"</span></span><br></pre></td></tr></table></figure></p><p>这样就在相应的路径中建立了一个叫做”我的第一篇博客”的文档，当然你也可以不用命令 ，你可以直接新建一个文本文档，然后重命名，把后缀名改为.md 就行了。</p><p>2、写博客你还要熟悉Markdown的使用 ,也可以直接用网页版  <a href="https://maxiang.io/" target="_blank" rel="noopener">马克飞象</a>写好以后复制到文档中，或者使用其他编辑器（vs code、notepad++，个人推荐vs code）</p><p>3、博客中默认是全文显示的，那样就需要将博客折叠一下，这样让博客的界面更简洁更有层次感,将下面这段代码放入文档中，在合适的位置放入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure></p><p>4、最后就是生成静态文件并发布到GitHub中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> g  //生成静态文件</span><br><span class="line"><span class="variable">$hexo</span> s  //本地预览</span><br><span class="line"><span class="variable">$hexo</span> d  //部署</span><br></pre></td></tr></table></figure></p><p>到这里就完成了一篇博客</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;hexo搭建博客的第一篇博文&quot;&gt;&lt;a href=&quot;#hexo搭建博客的第一篇博文&quot; class=&quot;headerlink&quot; title=&quot;hexo搭建博客的第一篇博文&quot;&gt;&lt;/a&gt;hexo搭建博客的第一篇博文&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;hexo&lt;/strong&gt;是一个快速，简单而强大的博客框架。您可以使用Markdown（或其他语言）编写文章，Hexo可以在几秒钟内生成具有美丽主题的静态文件。&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>写一篇博客</title>
     <link href="http://yoursite.com/2018/05/20/%E6%B5%8B%E8%AF%95/"/>
     <id>http://yoursite.com/2018/05/20/测试/</id>
     <published>2018-05-20T08:01:40.000Z</published>
-    <updated>2018-09-18T02:33:15.213Z</updated>
+    <updated>2018-09-18T13:02:36.255Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/large/006TQP4ygy1fvdzsr63ldj31hc0xcq6d.jpg" alt=""></p><h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;hello-world&quot;&gt;&lt;a href=&quot;#hello-world&quot; class=&quot;headerlink&quot; title=&quot;hello world&quot;&gt;&lt;/a&gt;hello world&lt;/h1&gt;
+        &lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/006TQP4ygy1fvdzsr63ldj31hc0xcq6d.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;hello-world&quot;&gt;&lt;a href=&quot;#hello-world&quot; class
       
     
     </summary>
