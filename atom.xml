@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-18T14:37:42.097Z</updated>
+  <updated>2018-09-21T04:36:11.382Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习笔记（一）</title>
+    <link href="http://yoursite.com/2018/09/21/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-1/"/>
+    <id>http://yoursite.com/2018/09/21/学习笔记（一）-1/</id>
+    <published>2018-09-21T04:36:11.000Z</published>
+    <updated>2018-09-21T04:36:11.382Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>换系统后怎么继续使用hexo</title>
@@ -31,6 +45,28 @@
 &lt;pre&gt;&lt;code&gt;暑假回来以后重新装了一个系统，装完系统以后的一天发现我博客不能用了，然后各种去网上找各位道友  
 的渡劫的经验，显然是找了好多，也进了很多的坑，下面分享一下我的一些坑吧！！
 &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记（一）</title>
+    <link href="http://yoursite.com/2018/08/21/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2018/08/21/学习笔记（一）/</id>
+    <published>2018-08-21T02:52:44.000Z</published>
+    <updated>2018-09-21T04:38:12.323Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Statement和PreparedStatment的区别"><a href="#Statement和PreparedStatment的区别" class="headerlink" title="Statement和PreparedStatment的区别"></a>Statement和PreparedStatment的区别</h1><h2 id="使用JDBC访问数据库"><a href="#使用JDBC访问数据库" class="headerlink" title="使用JDBC访问数据库"></a>使用JDBC访问数据库</h2><p>我们在学习java时连接数据库的步骤一般都是：</p><ul><li>加载驱动  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(dirvername);</span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><ul><li><p>建立数据库的连接  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection getConnection(String url,String user,String password);</span><br></pre></td></tr></table></figure></li><li><p>创建Statement或者PreparedStatement对象  （今天的主要内容）</p></li><li>执行SQL语句</li><li>如果有结果集ResultSet，则对结果集进行处理</li><li>释放资源<h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2>Connection对象一般都要获取Statement对象，Statement对象是用来执行SQL语句的<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">con=ConnectionFactory.getConnection();</span><br><span class="line">st=con.createStatement();//创建Statement对象</span><br><span class="line">String sql=“”；</span><br><span class="line">st.executeQuery(sql);//执行SQL语句</span><br></pre></td></tr></table></figure></li></ul><h2 id="PreParedStatement"><a href="#PreParedStatement" class="headerlink" title="PreParedStatement"></a>PreParedStatement</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">con=ConnectionFactory.getConnection();</span><br><span class="line">String sql=<span class="string">"insert table (a,b) values(?,?)"</span>;</span><br><span class="line">PreparedStatement pst=con.preparedStatement(sql);</span><br><span class="line">pst.setString(1,table.name);//1，代表第一个问号，table.name值table表中name属性</span><br><span class="line">pst.setString(2,table.num);</span><br><span class="line">pst.execute();</span><br></pre></td></tr></table></figure><p>PreparedStatement对象封装的SQL语句用占位符代表参数，在执行SQL语句前，使用PreparedStatement中定义的这种setXxx方法对参数进行赋值即可，不用去做烦琐的语句拼装工作</p><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p> PreparedStatement是Statement的子接口</p><ul><li>PreparedStatement是用预编译的方式包装SQL语句的，数据库不用每次编译SQL语句，性能比Statement好</li><li>PrepreparedStatement对象在封装SQL语句时用了占位符，Statement是用SQL语句的拼装。</li><li>PrepareparedStatement的开销比较大，在执行一次时建议用Statement</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Statement和PreparedStatment的区别&quot;&gt;&lt;a href=&quot;#Statement和PreparedStatment的区别&quot; class=&quot;headerlink&quot; title=&quot;Statement和PreparedStatment的区别&quot;&gt;&lt;/a&gt;Statement和PreparedStatment的区别&lt;/h1&gt;&lt;h2 id=&quot;使用JDBC访问数据库&quot;&gt;&lt;a href=&quot;#使用JDBC访问数据库&quot; class=&quot;headerlink&quot; title=&quot;使用JDBC访问数据库&quot;&gt;&lt;/a&gt;使用JDBC访问数据库&lt;/h2&gt;&lt;p&gt;我们在学习java时连接数据库的步骤一般都是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加载驱动  &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Class.forName(dirvername);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
