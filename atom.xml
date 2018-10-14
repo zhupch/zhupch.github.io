@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-18T14:37:42.097Z</updated>
+  <updated>2018-10-14T08:16:43.861Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个困惑</title>
+    <link href="http://yoursite.com/2018/10/14/%E4%B8%80%E4%B8%AA%E5%9B%B0%E6%83%91/"/>
+    <id>http://yoursite.com/2018/10/14/一个困惑/</id>
+    <published>2018-10-14T08:02:54.000Z</published>
+    <updated>2018-10-14T08:16:43.861Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用SSH框架搭建一个登录界面时，我出现了一个问题.</p><p>在登录界面login.jsp中下面这条语句中如果使用login就会报错……<br>当然我的sturts.xml 对应的也是login。。。。   (class中没有用类的路径是Spring的缘故)<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">login.jsp</span><br><span class="line">&lt;s:form action = <span class="string">"login.action"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">struts.xml</span><br><span class="line">&lt;action name=<span class="string">"userLogin"</span> class=<span class="string">"loginAction"</span>&gt;</span><br></pre></td></tr></table></figure></p><p>错误提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">No result defined for action action.LoginAction and result success</span><br></pre></td></tr></table></figure></p><p>如果将login.jsp 和 struts.xml文件中的login换一个名字，就可以成功,,,尚不知道什么原因，只有记录下来，防止以后再犯</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在用SSH框架搭建一个登录界面时，我出现了一个问题.&lt;/p&gt;
+&lt;p&gt;在登录界面login.jsp中下面这条语句中如果使用login就会报错……&lt;br&gt;当然我的sturts.xml 对应的也是login。。。。   (class中没有用类的路径是Spring的缘故)&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>油猴插件</title>
+    <link href="http://yoursite.com/2018/09/23/%E6%B2%B9%E7%8C%B4%E6%8F%92%E4%BB%B6/"/>
+    <id>http://yoursite.com/2018/09/23/油猴插件/</id>
+    <published>2018-09-23T13:15:06.000Z</published>
+    <updated>2018-10-14T08:00:38.340Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="介绍一个好用的插件"><a href="#介绍一个好用的插件" class="headerlink" title="介绍一个好用的插件"></a>介绍一个好用的插件</h1><p>不装扩展的Chrome只能发挥它一半的能力，谷歌浏览器这么多年的发展，已经有了很多很实用的插件,插件才是Chrome的灵魂，所以今天推荐一个比较好的插件油猴（Tampermonkey）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">油猴（Tampermonkey） 是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。 (这是官网的≧≦)</span><br></pre></td></tr></table></figure></p><a id="more"></a><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.如果你已经翻墙了的话，直接去谷歌应用商店下载（进应用商店，搜索Tampermonkey),这样很方便快捷（建议就是用过应用商店下载，因为我开始是直接下载，手动安装的，然后每次进浏览器就会提示我不安全，其实是没啥问题的，但是对于强迫症的人来说，这是一个很难受的事）。<br>2.没有翻墙的话，先去下载这个插件,然后把crx文件拖进拓展程序中,不过我用了新版的谷歌浏览器后，好像不行了，具体原因我也就没有去找了。用了另外一种方法，先把下载的crx文件的后缀名改成rar，然后解压，进入扩展程序界面，然后打开开发者模式，加载已解压的扩展程序，找到解压的那个文件夹，就可以了。。<br>安装好以后就可以去使用油猴插件了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://greasyfork.org/zh-CN</span><br></pre></td></tr></table></figure></p><p>油猴安装后，可以在这里下载你喜欢的脚本</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;介绍一个好用的插件&quot;&gt;&lt;a href=&quot;#介绍一个好用的插件&quot; class=&quot;headerlink&quot; title=&quot;介绍一个好用的插件&quot;&gt;&lt;/a&gt;介绍一个好用的插件&lt;/h1&gt;&lt;p&gt;不装扩展的Chrome只能发挥它一半的能力，谷歌浏览器这么多年的发展，已经有了很多很实用的插件,插件才是Chrome的灵魂，所以今天推荐一个比较好的插件油猴（Tampermonkey）&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;油猴（Tampermonkey） 是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。 (这是官网的≧≦)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>换系统后怎么继续使用hexo</title>
